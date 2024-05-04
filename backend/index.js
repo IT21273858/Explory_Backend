@@ -1,10 +1,22 @@
 var express = require('express');
 var app = express();
 require('dotenv').config();
-var routes = require ('./routes//routes');
+var routes = require ('./routes/routes');
 const cors = require ('cors');
 var mongoose = require('mongoose');
 
+
+// index.js
+import http from 'http';
+ 
+// Create a server object
+const server = http.createServer((req, res) => {
+    // Set the response header
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    // Write some text to the response
+    res.end('Welcome to my Explory app!');
+});
+ 
 const PORT = 8080;
 
 mongoose.connect(process.env.MongoDbUrl,{
