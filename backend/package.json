@@ -4,7 +4,9 @@
   "description": "Timetable application for SLIIT",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev":"concurrently \"npm run start\" \"npm run vercel\"",
+    "start": "nodemon server.js",
+    "vercel":"vercel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "IT21273858",
